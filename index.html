@@ -5,98 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alvi Dairy</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .form {
-      width: 100%;
-      max-width: 400px;
-      background: #333;
-      color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .form h2 {
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .form input, .form select, .form button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #444;
-      border-radius: 5px;
-      font-size: 16px;
-      background: #222;
-      color: white;
-    }
-
-    .form button {
-      background: #4ca1af;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .form button:hover {
-      background: #2c3e50;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background: #2c3e50;
-      color: white;
-      font-size: 14px;
-    }
-
-    /* Media Queries for Responsive Design */
-    @media (min-width: 768px) {
-      .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      h1 {
-        text-align: left;
-        margin-right: 20px;
-      }
-
-      .form {
-        margin-left: auto;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -119,13 +27,30 @@
         <button type="submit">Login</button>
       </form>
       <p>Don't have an account? <span id="show-signup">Signup</span></p>
+<p>&copy; SDA Production 2024</p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form hidden" id="signup-form">
+      <h2>Signup</h2>
+      <form id="signup">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <select name="role" id="signup-role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="farm_manager">Farm Manager</option>
+          <option value="vet_doctor">Vet Doctor</option>
+          <option value="farm_owner">Farm Owner</option>
+        </select>
+        <button type="submit">Signup</button>
+      </form>
+      <p1>Already have an account? <span id="show-login">Login</span></p1>
+<p>&copy; SDA Production 2024</p>
     </div>
   </div>
 
-  <!-- Footer Section -->
-  <footer>
-    &copy; SDA Production 2024
-  </footer>
+
 
   <script src="app.js"></script>
 </body>
