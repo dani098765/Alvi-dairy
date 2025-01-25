@@ -4,9 +4,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f4f4f4;
 }
 
@@ -20,6 +19,7 @@ body {
 
 .top-section {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -45,14 +45,9 @@ button:hover {
   background-color: #fff;
 }
 
-h3, h4 {
-  margin-top: 0;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
 table th,
@@ -71,20 +66,41 @@ table tr:nth-child(even) {
   background: #f4f4f4;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input, select {
+input {
   padding: 10px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .hidden {
   display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #2c3e50;
+  color: white;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .top-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .milk-records-container {
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  table th,
+  table td {
+    padding: 15px;
+  }
 }
