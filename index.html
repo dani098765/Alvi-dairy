@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvi Dairy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Main Heading -->
+    <h1>Alvi Dairy</h1>
+
+    <!-- Login Form -->
+    <div class="form" id="login-form">
+      <h2>Login</h2>
+      <form id="login">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <select name="role" id="login-role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="farm_manager">Farm Manager</option>
+          <option value="vet_doctor">Vet Doctor</option>
+          <option value="farm_owner">Farm Owner</option>
+        </select>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <span id="show-signup">Signup</span></p>
+<p>&copy; SDA Production 2024</p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form hidden" id="signup-form">
+      <h2>Signup</h2>
+      <form id="signup">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <select name="role" id="signup-role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="farm_manager">Farm Manager</option>
+          <option value="vet_doctor">Vet Doctor</option>
+          <option value="farm_owner">Farm Owner</option>
+        </select>
+        <button type="submit">Signup</button>
+      </form>
+      <p1>Already have an account? <span id="show-login">Login</span></p1>
+<p>&copy; SDA Production 2024</p>
+    </div>
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>

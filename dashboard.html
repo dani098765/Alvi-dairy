@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Farm Management</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Alvi Dairy</h3>
+      <ul>
+        <li data-target="animal_records.html">Animal Records</li>
+        <li data-target="milk_records.html">Milk Records</li>
+        <li data-target="animal_health.html">Animal Health</li>
+        <li data-target="breeding.html">Breeding</li>
+        <li data-target="animal_weight.html">Animal Weight</li>
+        <li data-target="milk_sale.html">Milk Sale</li>
+        <li data-target="farm_finance.html">Farm Finance</li>
+        <li data-target="employees.html">Employees</li>
+        <li data-target="stock_feed.html">Stock Feed</li>
+        <li id="logout">Logout</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <iframe id="content-frame" src="welcome.html" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar navigation
+    document.querySelectorAll('.sidebar ul li').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-target');
+        if (target) {
+          document.getElementById('content-frame').src = target;
+        }
+      });
+    });
+
+    // Logout functionality
+    document.getElementById('logout').addEventListener('click', () => {
+      localStorage.removeItem('currentUser'); // Clear user session
+      window.location.href = 'index.html'; // Redirect to login
+    });
+
+  </script>
+
+</body>
+</html>

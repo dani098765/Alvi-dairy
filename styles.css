@@ -1,0 +1,64 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select, input {
+  border: 1px solid #444;
+  background: #222;
+  color: white;
+}
+
+button {
+  background: #4ca1af;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2c3e50;
+}
+
+.hidden {
+  display: none; /* Hide the form completely */
+}
+
+span {
+  color: #4ca1af;
+  cursor: pointer;
+  font-weight: bold;
+}
