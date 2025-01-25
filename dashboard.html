@@ -5,9 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dairy Farm Management</title>
   <link rel="stylesheet" href="styles1.css">
+  <style>
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background: #2c3e50;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      right: 20px;
+      z-index: 1000;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown.active {
+      display: flex;
+    }
+
+    .dropdown ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown ul li {
+      padding: 10px;
+      background: #4ca1af;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dropdown ul li:hover {
+      background: #2c3e50;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: #4ca1af;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="dashboard-container">
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu" id="menu-toggle">Menu</button>
+
+    <!-- Dropdown Menu for Mobile -->
+    <div class="dropdown" id="mobile-menu">
+      <ul>
+        <li data-target="animal_records.html">Animal Records</li>
+        <li data-target="milk_records.html">Milk Records</li>
+        <li data-target="animal_health.html">Animal Health</li>
+        <li data-target="breeding.html">Breeding</li>
+        <li data-target="animal_weight.html">Animal Weight</li>
+        <li data-target="milk_sale.html">Milk Sale</li>
+        <li data-target="farm_finance.html">Farm Finance</li>
+        <li data-target="employees.html">Employees</li>
+        <li data-target="stock_feed.html">Stock Feed</li>
+        <li id="logout">Logout</li>
+      </ul>
+    </div>
+
     <!-- Sidebar -->
     <div class="sidebar">
       <h3>Alvi Dairy</h3>
@@ -33,7 +111,7 @@
 
   <script>
     // Sidebar navigation
-    document.querySelectorAll('.sidebar ul li').forEach((tab) => {
+    document.querySelectorAll('.sidebar ul li, .dropdown ul li').forEach((tab) => {
       tab.addEventListener('click', () => {
         const target = tab.getAttribute('data-target');
         if (target) {
@@ -42,13 +120,19 @@
       });
     });
 
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
     // Logout functionality
     document.getElementById('logout').addEventListener('click', () => {
       localStorage.removeItem('currentUser'); // Clear user session
       window.location.href = 'index.html'; // Redirect to login
     });
-
   </script>
-
 </body>
 </html>
