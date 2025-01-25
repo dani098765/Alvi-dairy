@@ -99,7 +99,7 @@
         <li data-target="farm_finance.html">Farm Finance</li>
         <li data-target="employees.html">Employees</li>
         <li data-target="stock_feed.html">Stock Feed</li>
-        <li id="logout">Logout</li>
+        <li id="logout" class="logout">Logout</li>
       </ul>
     </div>
 
@@ -129,9 +129,11 @@
     });
 
     // Logout functionality
-    document.getElementById('logout').addEventListener('click', () => {
-      localStorage.removeItem('currentUser'); // Clear user session
-      window.location.href = 'index.html'; // Redirect to login
+    document.querySelectorAll('#logout').forEach((logoutButton) => {
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('currentUser'); // Clear user session
+        window.location.href = 'index.html'; // Redirect to login
+      });
     });
   </script>
 </body>
