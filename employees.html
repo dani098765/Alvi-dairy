@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="employees-container">
+    <!-- Top Buttons -->
+    <div class="top-section">
+      <button id="add-employee-btn">Add Employee</button>
+      <button id="show-employees-btn">Show Employees</button>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-section" id="employee-content-display-area">
+      <!-- Dynamic content will be rendered here -->
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const contentArea = document.getElementById("employee-content-display-area");
+
+      function renderEmployeeList() {
+        contentArea.innerHTML = `
+          <h3>Employee List</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Contact</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Employee rows will be dynamically inserted here -->
+            </tbody>
+          </table>
+        `;
+      }
+
+      function renderAddEmployeeForm() {
+        contentArea.innerHTML = `
+          <h3>Add Employee</h3>
+          <form id="add-employee-form">
+            <label for="employee-name">Name:</label>
+            <input type="text" id="employee-name" required>
+
+            <label for="employee-role">Role:</label>
+            <input type="text" id="employee-role" required>
+
+            <label for="employee-contact">Contact:</label>
+            <input type="text" id="employee-contact" required>
+
+            <button type="submit">Save Employee</button>
+          </form>
+        `;
+
+        document.getElementById("add-employee-form").addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Employee added successfully!");
+          renderEmployeeList();
+        });
+      }
+
+      document.getElementById("add-employee-btn").addEventListener("click", renderAddEmployeeForm);
+      document.getElementById("show-employees-btn").addEventListener("click", renderEmployeeList);
+
+      renderEmployeeList(); // Initial render
+    });
+  </script>
+</body>
+</html>
