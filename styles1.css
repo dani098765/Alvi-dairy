@@ -32,11 +32,13 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .sidebar ul li {
   padding: 10px;
-  margin: 5px 0;
   background: #4ca1af;
   text-align: center;
   border-radius: 5px;
@@ -89,6 +91,10 @@ footer {
     height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  .sidebar ul {
+    gap: 15px;
   }
 
   .main-content {
