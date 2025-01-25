@@ -4,9 +4,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f4f4f4;
 }
 
@@ -20,6 +19,7 @@ body {
 
 .top-section {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -76,4 +76,31 @@ input {
 
 .hidden {
   display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #2c3e50;
+  color: white;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .top-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .animal-records-container {
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+
+  table th,
+  table td {
+    padding: 15px;
+  }
 }
